@@ -7,8 +7,8 @@ from verbs_functions import Verbs, write_in_file
 names = [['номер', 'дієслово', 'вид', 'дієприслівник від основи теперішнього часу', 'дієприслівник від основи чол.р. минулого часу']]
 write_in_file(names)
 
-folder = input("Будь ласка, вкажіть шлях до файлів (з \\\\ для Windows): ").strip(' ')
-# folder = "C:\\Users\\Acer\\PycharmProjects\\Навчання\\2 курс\\adverbs_lab\\data"
+folder = input("Будь ласка, вкажіть шлях до файлів (з \\\\ для Windows): ").strip(""""' """)
+# folder = "C:\\PycharmProjects\\Programming_Fedorova\\2 курс\\adverbs_lab\\data"
 
 for path in Path(folder).iterdir():
     if PurePosixPath(str(path)).suffix == '.csv' or PurePosixPath(str(path)).suffix == '.txt':
@@ -26,3 +26,5 @@ for path in Path(folder).iterdir():
 
         except UnicodeDecodeError:
             print('Файл ' + PurePath(str(path)).name + ' має неприпустиме кодування, встановіть UTF-8.')
+
+print("Adverbs were generated successfully.")
